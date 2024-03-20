@@ -1,6 +1,7 @@
 
 package com.tienda.controller;
 
+import com.tienda.domain.Categoria;
 import com.tienda.domain.Producto;
 import com.tienda.service.CategoriaService;
 import com.tienda.service.ProductoService;
@@ -68,6 +69,5 @@ public class ProductoController {
             productoService.delete(producto);
                 return "redirect:/producto/listado";
             }
-        
-    
+ 
 }
