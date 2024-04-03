@@ -67,5 +67,10 @@ public class ProductoServiceImpl
         return productoDao.metodoSQL(precioInf, precioSup);
         
 }
+           @Override
+    @Transactional(readOnly = true)
+        public List<Producto> metodoSQL2(int existencias){
+            return productoDao.metodoSQL2(existencias);
+        }
     
 }

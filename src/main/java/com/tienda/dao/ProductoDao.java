@@ -17,8 +17,12 @@ public interface ProductoDao
     public List<Producto> metodoJPQL(double precioInf, double precioSup);
 
     // Esta consulta utiliza consultas sql
-    @Query(nativeQuery=true,
+    @Query(nativeQuery = true,
             value = "SELECT * from producto p WHERE p.precio BETWEEN :precioInf and :precioSup ORDER BY p.descripcion ASC")
     public List<Producto> metodoSQL(double precioInf, double precioSup);
+
+    @Query(nativeQuery = true, value = "SELECT * FROM producto p WHERE p.existencias >= :existencias ORDER BY p.descripcion ASC")
+    public List<Producto> metodoSQL2(int existencias);
+
 
 }

@@ -12,6 +12,7 @@
                 <div class="row">
                     <div class="col-md-3">   
                         <button 
+                            sec:authorize="hasRole('ROLE_ADMIN')"
                             type="button" 
                             class="btn btn-primary btn-block" 
                             data-bs-toggle="modal" 
@@ -113,7 +114,7 @@
                                             <td>[[${producto.categoria.descripcion}]]</td>
 
                                             <td th:text="${producto.activo} ? 'Activa' : 'Inactiva'" />
-                                            <td><a th:href="@{/producto/eliminar/}+${producto.idProducto}"
+                                            <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/producto/eliminar/}+${producto.idProducto}"
                                                    class="btn btn-danger">
                                                     <i class="fas fa-trash"></i> [[#{accion.eliminar}]]</a>
                                                 <a th:href="@{/producto/modificar/}+${producto.idProducto}"

@@ -3,6 +3,7 @@ package com.tienda.service;
 
 import com.tienda.domain.Producto;
 import java.util.List;
+import org.springframework.data.jpa.repository.Query;
 
 public interface ProductoService {
     //Se define la firma del metodo para obtener los registros de producto, en forma de lista
@@ -27,4 +28,8 @@ public interface ProductoService {
 
     // Esta consulta utiliza consultas sql
     public List<Producto> metodoSQL(double precioInf, double precioSup);
+    
+    public List<Producto> metodoSQL2(int existencias);
+
+
 }
