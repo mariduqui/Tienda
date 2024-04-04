@@ -58,7 +58,7 @@ public class ProjectConfig implements WebMvcConfigurer{
     @Bean
     public SecurityFilterChain securityFilterChain (HttpSecurity http) throws Exception {
         http.authorizeHttpRequests((request)
-                -> request.requestMatchers("/", "/login", "/js/**", "/webjars/**")
+                -> request.requestMatchers("/", "/login", "/js/**", "/webjars/**","/registro/**")
                         .permitAll()
                         .requestMatchers("/categoria/listado", "/producto/listado")
                         .hasRole("VENDEDOR")
